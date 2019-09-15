@@ -20,32 +20,21 @@
 </ul>
 
 </ul>
-<div id="patientWaitingApp" class="col-md3 queueView">
-  <div class="patient patientWaiting"
-  v-bind:class="patient.priority + 'Priority'"
-  v-for= "paitent in patients">
-    Arrival date<br>
-    <span class="patientName">{{ patient.lastName}}</span>,
-    <span class="patientName">{{ patient.firstName}} </span> <br>
-    {{ patient.sexAtBirth }} {{ patient.dob}}
-  </div>
-</div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>"
-<script src="js/waiting.app.js"></script>
-<h3> Meet Aubree... </h3>
-  <body>
+<div id="fetchPerson" class="col-md3 queueView">
+  <div class="person randomUser">
+<h3> Meet <span class ="capital"> {{people.results[0].name.first}} {{people.results[0].name.last}} </span> </h3>
+
     <li class="list-group-item, center">
-      <a href="img/Aubree.jpg"><img src="img/aubree.jpg" class="img-thumbnail"></a>
-      <p>
-      <a href="https://randomuser.me/api/portraits/women/64.jpg">Click Here for Original</a>
+      <a v-bind:href="people.results[0].picture.large">
+        <img alt="My Face" class="img-thumbnail" v-bind:src= "people.results[0].picture.medium"></a>Click Here for Original</a>
     </p>
   </li>
 
 
     <p>
-      My name is Aubree Turner and I am obsessed with all things Harry Potter! I was born and raised in London, England. My Haprry Potter obsession started at a young age, I was born on August 1st 1984 (35 years old). Feel free to free to <a href="mailto:aubree.turner71@example.com">email </a> me with your latest and greatest HP finds!
-
+      My name is {{people.results[0].name.first}} {{people.results[0].name.last}} and I am obsessed with all things Harry Potter! I was born and raised in <span class=capital> {{people.results[0].location.state}}</span>. My Haprry Potter obsession started at a young age, I was born on {{people.results[0].dob.date}}, {{people.results[0].dob.age}} years old. Feel free to free to <a href="mailto:aubree.turner71@example.com">{{people.results[0].email}}email </a> me with your latest and greatest HP finds!
+    </div>
+  </div>
 </p>
 <ul class="list-group list-group-horizontal">
     <li class="list-group-item">
@@ -67,7 +56,8 @@
     </li>
 </ul>
 
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/waitingapp.js"></script>
 
 </body>
 </html>
