@@ -20,7 +20,7 @@
 </ul>
 
 </ul>
-<div id="fetchPerson" class="col-md3 queueView">
+<div id="fetchPerson" class="col-md3 queueView" v-if="people.results">
   <div class="person randomUser">
 <h3> Meet <span class ="capital"> {{people.results[0].name.first}} {{people.results[0].name.last}} </span> </h3>
 
