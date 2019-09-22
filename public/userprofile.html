@@ -33,7 +33,12 @@
 
     <p>
       My name is {{people.results[0].name.first}} {{people.results[0].name.last}} and I am obsessed with all things Harry Potter! I was born and raised in <span class=capital> {{people.results[0].location.state}}</span>. My Haprry Potter obsession started at a young age, I was born on {{people.results[0].dob.date}}, {{people.results[0].dob.age}} years old. Feel free to free to <a href="mailto:aubree.turner71@example.com">{{people.results[0].email}}email </a> me with your latest and greatest HP finds!
-    </div>
+<div>
+  <form id="userfm" v-on:submit.prevent="fetchPeople">
+    <button type="submit"> Next User!</button>
+  </form>
+</div>
+</div>
   </div>
 </p>
 <ul class="list-group list-group-horizontal">
