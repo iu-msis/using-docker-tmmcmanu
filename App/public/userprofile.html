@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Project 1</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/mystyle.css">
+</head>
+<body>
+  <ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link Home" href="index.html">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="userprofile.html">About Me</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="book.html">Favorite Books</a>
+  </li>
+</ul>
+
+</ul>
+<div id="fetchPerson" class="col-md3 queueView" v-if="people.results">
+  <div class="person randomUser">
+<h3> Meet <span class ="capital"> {{people.results[0].name.first}} {{people.results[0].name.last}} </span> </h3>
+
+    <li class="list-group-item, center">
+      <a v-bind:href="people.results[0].picture.large">
+        <img alt="My Face" class="img-thumbnail" v-bind:src= "people.results[0].picture.medium"></a>Click Here for Original</a>
+    </p>
+  </li>
+
+
+    <p>
+      My name is {{people.results[0].name.first}} {{people.results[0].name.last}} and I am obsessed with all things Harry Potter! I was born and raised in <span class=capital> {{people.results[0].location.state}}</span>. My Haprry Potter obsession started at a young age, I was born on {{people.results[0].dob.date}}, {{people.results[0].dob.age}} years old. Feel free to free to <a href="mailto:aubree.turner71@example.com">{{people.results[0].email}}email </a> me with your latest and greatest HP finds!
+<div>
+  <form id="userfm" v-on:submit.prevent="fetchPeople">
+    <button type="submit"> Next User!</button>
+  </form>
+</div>
+</div>
+  </div>
+</p>
+<ul class="list-group list-group-horizontal">
+    <li class="list-group-item">
+        <a href="img/download.png">
+            <img src="img/download.png" class="img-thumbnail">
+        </a>
+        <p>
+            <a href="https://www.joyscribe.com/harry-potters-scar-isnt-actually-a-lightning-bolt-and-fans-are-losing-it/"> Click Here for Original</a>
+        </p>
+    </li>
+
+    <li class="list-group-item">
+        <a href="img/glasses.png">
+            <img src="img/glasses.png" class="img-thumbnail">
+        </a>
+        <p>
+            <a href="#">Click Here for Original</a>
+        </p>
+    </li>
+</ul>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/waitingapp.js"></script>
+
+</body>
+</html>

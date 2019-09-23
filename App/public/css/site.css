@@ -1,0 +1,15 @@
+.patientName {
+  font-weight: bold;
+}
+
+.highPriority {
+  border-left: 6px solid red;
+}
+
+mediumPriority {
+  border-left: 6px solid orange;
+}
+
+lowPriority {
+  border-left: 6px solid blue;
+}
